@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Experimenting_on_sorting_algorithms {
-    class Methods {
-
+    public class Methods {
         private Numbers root;
 
         public Methods() {
 
 
         }
-
         public void MergeSort(int[] array, int left, int mid, int right) {
             int[] temp = new int[25];
             int i, eol, num, pos;
@@ -49,8 +47,6 @@ namespace Experimenting_on_sorting_algorithms {
 
             return array;
         }
-
-
 
         public int[] BinaryTreeSort(int[] array) {
 
@@ -115,7 +111,4 @@ namespace Experimenting_on_sorting_algorithms {
         }
 
     }
-
-
-
 }
