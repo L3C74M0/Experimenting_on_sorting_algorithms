@@ -28,13 +28,19 @@ namespace Experimenting_on_sorting_algorithms {
 
             for(int i = 0; i < array.Length; i++) {
                 line+= " " + array[i];
+                Numbers n = new Numbers(array[i]);
+                methods.addToTree(n);
             }
 
             Console.WriteLine("antes de ejecutar el metodo: ");
             Console.WriteLine(line);
 
             methods.MergeSort(array, 0, array.Length - 1);
-
+            List<Numbers> p = methods.InOrder();
+            for (int i=0;i<p.Count();i++)
+            {
+                Console.WriteLine(p[i].Get()+"\n");
+            }
             line = "";
             for (int i = 0; i < array.Length; i++) {
                 line += " " + array[i];
