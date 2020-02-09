@@ -8,9 +8,9 @@ namespace Experimenting_on_sorting_algorithms {
     class Methods {
 
         private Numbers root;
-        
-        public Methods(){
-        
+
+        public Methods() {
+
 
         }
 
@@ -58,12 +58,12 @@ namespace Experimenting_on_sorting_algorithms {
             return array;
         }
 
-        public void addParticipantIntoTree(Numbers p)
+        public void addToTree(Numbers p)
         {
-            addParticipantIntoTree(p, root);
+            addToTree(p, root);
         }
 
-        private void addParticipantIntoTree(Numbers part, Numbers current)
+        private void addToTree(Numbers part, Numbers current)
         {
             if (root == null)
             {
@@ -71,7 +71,7 @@ namespace Experimenting_on_sorting_algorithms {
             }
             else
             {
-                if (part.compareTo(current) <= 0)
+                if (part.CompareTo(current) <= 0)
                 {
                     if (current.getLeft() == null)
                     {
@@ -79,7 +79,7 @@ namespace Experimenting_on_sorting_algorithms {
                     }
                     else
                     {
-                        addParticipantIntoTree(part, current.getLeft());
+                        addToTree(part, current.getLeft());
                     }
                 }
                 else
@@ -90,11 +90,28 @@ namespace Experimenting_on_sorting_algorithms {
                     }
                     else
                     {
-                        addParticipantIntoTree(part, current.getRigth());
+                        addToTree(part, current.getRigth());
                     }
                 }
 
             }
+        }
+
+        public List<Numbers> InOrder()
+        {
+            List<Numbers> numbersInTree = new List<Numbers>();
+            return InOrder(root, numbersInTree);
+        }
+
+        private List<Numbers> InOrder(Numbers root, List<Numbers> n )
+        {
+            List<Numbers> obj = n;
+            if (root == null)
+                return null;
+            InOrder(root.getLeft(), obj);
+            obj.Add(root);
+            InOrder(root.getRigth(), obj);
+            return obj;
         }
 
     }
