@@ -63,7 +63,7 @@ namespace Experimenting_on_sorting_algorithms {
             addParticipantIntoTree(p, root);
         }
 
-        private void addParticipantIntoTree(Participant part, Participant current)
+        private void addParticipantIntoTree(Numbers part, Numbers current)
         {
             if (root == null)
             {
