@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Experimenting_on_sorting_algorithms {
     class Methods {
 
-
+        private Numbers root;
+        
         public Methods(){
         
 
@@ -55,6 +56,45 @@ namespace Experimenting_on_sorting_algorithms {
 
 
             return array;
+        }
+
+        public void addParticipantIntoTree(Numbers p)
+        {
+            addParticipantIntoTree(p, root);
+        }
+
+        private void addParticipantIntoTree(Participant part, Participant current)
+        {
+            if (root == null)
+            {
+                root = part;
+            }
+            else
+            {
+                if (part.compareTo(current) <= 0)
+                {
+                    if (current.getLeft() == null)
+                    {
+                        current.setLeft(part);
+                    }
+                    else
+                    {
+                        addParticipantIntoTree(part, current.getLeft());
+                    }
+                }
+                else
+                {
+                    if (current.getRigth() == null)
+                    {
+                        current.setRigth(part);
+                    }
+                    else
+                    {
+                        addParticipantIntoTree(part, current.getRigth());
+                    }
+                }
+
+            }
         }
 
     }

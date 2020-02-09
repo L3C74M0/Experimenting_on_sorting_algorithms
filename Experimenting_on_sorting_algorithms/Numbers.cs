@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Experimenting_on_sorting_algorithms
 {
-    class Numbers
+    class Numbers: IComparable<Numbers>
     {
         private int n;
         private Numbers left;
@@ -47,5 +47,22 @@ namespace Experimenting_on_sorting_algorithms
             this.right = rigth;
         }
 
+        public int CompareTo(Numbers n2)
+        {
+            int comparation;
+            if (n < n2.n)
+            {
+                comparation = -1;
+            }
+            else if (n > n2.n)
+            {
+                comparation = 1;
+            }
+            else
+            {
+                comparation = 0;
+            }
+            return comparation;
+        }
     }
 }
