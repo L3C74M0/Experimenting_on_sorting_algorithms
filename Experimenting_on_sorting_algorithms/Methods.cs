@@ -87,7 +87,6 @@ namespace Experimenting_on_sorting_algorithms {
                         addToTree(part, current.getRigth());
                     }
                 }
-
             }
         }
 
@@ -107,6 +106,5 @@ namespace Experimenting_on_sorting_algorithms {
             InOrder(root.getRigth(), obj);
             return obj;
         }
-
     }
 }

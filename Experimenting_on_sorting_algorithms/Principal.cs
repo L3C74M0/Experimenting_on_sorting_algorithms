@@ -11,7 +11,7 @@ namespace Experimenting_on_sorting_algorithms {
         static void Main(string[] args) {
             methods = new Methods();
 
-            int[] array = new int[10000];
+            int[] array = new int[100000];
             Random random = new Random();
 
             for (int i = 0; i < array.Length; i++)
@@ -19,13 +19,13 @@ namespace Experimenting_on_sorting_algorithms {
                 array[i] = random.Next(1, 100000);
             }
 
-            long time1 = DateTime.Now.Millisecond;
-           
             Console.WriteLine("Con un arreglo de tamaño " + array.Length);
+            long time1 = DateTime.Now.Millisecond;
             methods.MergeSort(array, 0, array.Length - 1);
+            long time2 = DateTime.Now.Millisecond;
             Console.WriteLine(" ");
 
-            long time2 = DateTime.Now.Millisecond;
+           
 
             long elapsedMS = time2 - time1;
             Console.WriteLine("Mi laptop tarda: " + elapsedMS + "ms");
