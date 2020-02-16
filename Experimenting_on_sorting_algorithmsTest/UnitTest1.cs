@@ -1,7 +1,8 @@
 ﻿using System;
 using Experimenting_on_sorting_algorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System.Collections;
+using System.Collections.Generic;
 namespace Experimenting_on_sorting_algorithmsTest
 {
     [TestClass]
@@ -57,6 +58,26 @@ namespace Experimenting_on_sorting_algorithmsTest
             Methods M = new Methods();
 
             Assert.IsNotNull(M);
+        }
+        [TestMethod]
+        public void BinaryTreeSortTest()
+        {
+
+            Random random = new Random();
+            Methods M = new Methods();
+            for (int i = 0; i < 1000; i++)
+            {
+                Numbers newOne = new Numbers(random.Next(1, 100));
+                M.addToTree(newOne);
+            }
+
+            List<Numbers> x = M.InOrder();
+
+
+            for (int i = 1; i < x.Count; i++)
+            {
+                Assert.IsTrue(x[i].CompareTo(x[i - 1]) >= 0, "El número " + x[i].Get() + " en la posición " + i + " No es mas grande que el número " + x[i - 1].Get() + " en la posición " + (i - 1));
+            }
         }
     }
 }
