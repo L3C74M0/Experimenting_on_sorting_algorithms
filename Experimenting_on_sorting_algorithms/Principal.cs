@@ -11,7 +11,7 @@ namespace Experimenting_on_sorting_algorithms {
         static void Main(string[] args) {
             methods = new Methods();
 
-            int[] array = new int[10];
+            int[] array = new int[100000];
             Random random = new Random();
 
             for (int i = 0; i < array.Length; i++)
