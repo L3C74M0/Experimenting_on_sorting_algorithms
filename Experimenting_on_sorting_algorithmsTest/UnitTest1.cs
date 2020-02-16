@@ -59,6 +59,7 @@ namespace Experimenting_on_sorting_algorithmsTest
 
             Assert.IsNotNull(M);
         }
+
         [TestMethod]
         public void BinaryTreeSortTest()
         {
