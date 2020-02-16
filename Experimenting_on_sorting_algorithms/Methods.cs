@@ -10,12 +10,10 @@ namespace Experimenting_on_sorting_algorithms {
         private Numbers root;
 
         public Methods() {
-
-
         }
 
         public void MergeSort(int[] array, int left, int mid, int right) {
-            int[] temp = new int[100000];
+            int[] temp = new int[10000000];
             int i, eol, num, pos;
             eol = (mid - 1);
             pos = left;
@@ -50,11 +48,7 @@ namespace Experimenting_on_sorting_algorithms {
             return array;
         }
 
-
-
         public int[] BinaryTreeSort(int[] array) {
-
-
             return array;
         }
 
@@ -115,7 +109,4 @@ namespace Experimenting_on_sorting_algorithms {
         }
 
     }
-
-
-
 }
