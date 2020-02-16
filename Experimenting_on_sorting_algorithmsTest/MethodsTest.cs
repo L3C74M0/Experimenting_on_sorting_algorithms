@@ -6,13 +6,14 @@ using System.Collections.Generic;
 namespace Experimenting_on_sorting_algorithmsTest
 {
     [TestClass]
-    public class MethodsTest
+    public class UnitTest1
     {
-        [TestMethod]
-        public void MergeSortTest1()
-        {
-            int[] array = new int[1000];
 
+        private Methods M;
+        private int[] array;
+        private void setupScenary1()
+        {
+            array = new int[1000];
             Random random = new Random();
 
             for (int i = 0; i < array.Length; i++)
@@ -20,7 +21,49 @@ namespace Experimenting_on_sorting_algorithmsTest
                 array[i] = random.Next(1, 100);
             }
 
-            Methods M = new Methods();
+            M = new Methods();
+        }
+        private void setupScenary2()
+        {
+            array = new int[1000];
+            Random random = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(-100, 100);
+            }
+
+            M = new Methods();
+        }
+
+        private void setupScenary3()
+        {
+            Random random = new Random();
+            M = new Methods();
+            for (int i = 0; i < 1000; i++)
+            {
+                Numbers newOne = new Numbers(random.Next(1, 100));
+                M.addToTree(newOne);
+            }
+
+        }
+        private void setupSecnary4()
+        {
+
+            Random random = new Random();
+            M = new Methods();
+            for (int i = 0; i < 1000; i++)
+            {
+                Numbers newOne = new Numbers(random.Next(-100, 100));
+                M.addToTree(newOne);
+            }
+        }
+        [TestMethod]
+        public void MergeSortTest1()
+        {
+            setupScenary1();
+
+
 
             M.MergeSort(array, 0, array.Length - 1);
 
@@ -33,16 +76,7 @@ namespace Experimenting_on_sorting_algorithmsTest
         [TestMethod]
         public void MergeSortTest2()
         {
-            int[] array = new int[1000];
-
-            Random random = new Random();
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = random.Next(-100, 100);
-            }
-
-            Methods M = new Methods();
+            setupScenary2();
 
             M.MergeSort(array, 0, array.Length - 1);
 
@@ -63,14 +97,8 @@ namespace Experimenting_on_sorting_algorithmsTest
         [TestMethod]
         public void BinaryTreeSortTest1()
         {
+            setupScenary3();
 
-            Random random = new Random();
-            Methods M = new Methods();
-            for (int i = 0; i < 1000; i++)
-            {
-                Numbers newOne = new Numbers(random.Next(1, 100));
-                M.addToTree(newOne);
-            }
 
             List<Numbers> x = M.InOrder();
 
@@ -83,14 +111,7 @@ namespace Experimenting_on_sorting_algorithmsTest
         [TestMethod]
         public void BinaryTreeSortTest2()
         {
-
-            Random random = new Random();
-            Methods M = new Methods();
-            for (int i = 0; i < 1000; i++)
-            {
-                Numbers newOne = new Numbers(random.Next(-100, 100));
-                M.addToTree(newOne);
-            }
+            setupSecnary4();
 
             List<Numbers> x = M.InOrder();
 
