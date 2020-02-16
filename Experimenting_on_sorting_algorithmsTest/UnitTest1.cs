@@ -59,6 +59,7 @@ namespace Experimenting_on_sorting_algorithmsTest
 
             Assert.IsNotNull(M);
         }
+
         [TestMethod]
         public void BinaryTreeSortTest()
         {
@@ -78,8 +79,6 @@ namespace Experimenting_on_sorting_algorithmsTest
             {
                 Assert.IsTrue(x[i].CompareTo(x[i - 1]) >= 0, "El número " + x[i].Get() + " en la posición " + i + " No es mas grande que el número " + x[i - 1].Get() + " en la posición " + (i - 1));
             }
-
-
         }
     }
 }
