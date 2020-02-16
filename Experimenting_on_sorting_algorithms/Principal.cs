@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace Experimenting_on_sorting_algorithms {
     public class Principal {
         protected static Methods methods;
-        
+
         static void Main(string[] args) {
+
             methods = new Methods();
 
-            int[] array = new int[100000];
+            int[] array = new int[10];
             Random random = new Random();
 
             for (int i = 0; i < array.Length; i++)
@@ -19,7 +20,7 @@ namespace Experimenting_on_sorting_algorithms {
                 array[i] = random.Next(1, 100000);
             }
 
-            
+
             /*
             //Para el MergeSort
             Console.WriteLine("Con un arreglo de tamaño " + array.Length);
@@ -29,10 +30,10 @@ namespace Experimenting_on_sorting_algorithms {
             Console.WriteLine(" ");
 
             */
-            
+
             //Para el arbol
+            long t1 = CurrentTimeMillis();
             Console.WriteLine("Con un arreglo de tamaño " + array.Length);
-            long time1 = DateTime.Now.Millisecond;
             for (int i = 0; i < array.Length; i++)
             {
                 Numbers newOne = new Numbers(array[i]);
@@ -40,16 +41,21 @@ namespace Experimenting_on_sorting_algorithms {
             }
             List<Numbers> x = methods.InOrder();
 
-            long time2 = DateTime.Now.Millisecond;
+            long t2 = CurrentTimeMillis();
             Console.WriteLine(" ");
-            
 
-            long elapsedMS = time2 - time1;
+
+            long elapsedMS = t2 - t1;
             Console.WriteLine("Mi laptop tarda: " + elapsedMS + "ms");
 
             Console.ReadLine();
         }
 
- 
-    }
+        public static DateTime reference = DateTime.UtcNow;
+        public static long CurrentTimeMillis()
+        {
+            return (long) (DateTime.UtcNow - reference).TotalMilliseconds;
+        }
+
+}
 }
