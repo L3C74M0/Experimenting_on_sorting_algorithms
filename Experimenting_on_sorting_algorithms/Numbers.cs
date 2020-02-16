@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Experimenting_on_sorting_algorithms
 {
-    class Numbers: IComparable<Numbers>
+    public class Numbers: IComparable<Numbers>
     {
         private int n;
         private Numbers left;

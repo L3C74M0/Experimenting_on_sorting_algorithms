@@ -5,25 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Experimenting_on_sorting_algorithms {
-    class Principal {
+    public class Principal {
         protected static Methods methods;
         
         static void Main(string[] args) {
             methods = new Methods();
 
-            int[] array = new int[10];
-            array[0] = 10;
-            array[1] = 9;
-            array[2] = 8;
-            array[3] = 7;
-            array[4] = 6;
-            array[5] = 5;
-            array[6] = 4;
-            array[7] = 3;
-            array[8] = 2;
-            array[9] = 1;
+            int[] array = new int[99];
 
-            
+            Random random = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 100);
+            }
+
+
             String line = "";
 
             for(int i = 0; i < array.Length; i++) {
@@ -39,7 +36,7 @@ namespace Experimenting_on_sorting_algorithms {
             List<Numbers> p = methods.InOrder();
             for (int i=0;i<p.Count();i++)
             {
-                Console.WriteLine(p[i].Get()+"\n");
+                Console.WriteLine(p[i].Get());
             }
             line = "";
             for (int i = 0; i < array.Length; i++) {

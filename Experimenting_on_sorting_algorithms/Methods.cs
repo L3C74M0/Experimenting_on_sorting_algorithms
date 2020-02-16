@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Experimenting_on_sorting_algorithms {
-    class Methods {
+    public class Methods {
 
         private Numbers root;
 
@@ -15,7 +15,7 @@ namespace Experimenting_on_sorting_algorithms {
         }
 
         public void MergeSort(int[] array, int left, int mid, int right) {
-            int[] temp = new int[25];
+            int[] temp = new int[100000];
             int i, eol, num, pos;
             eol = (mid - 1);
             pos = left;
