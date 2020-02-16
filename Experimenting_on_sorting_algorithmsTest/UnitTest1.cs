@@ -61,7 +61,7 @@ namespace Experimenting_on_sorting_algorithmsTest
         }
 
         [TestMethod]
-        public void BinaryTreeSortTest()
+        public void BinaryTreeSortTest1()
         {
 
             Random random = new Random();
@@ -79,6 +79,34 @@ namespace Experimenting_on_sorting_algorithmsTest
             {
                 Assert.IsTrue(x[i].CompareTo(x[i - 1]) >= 0, "El número " + x[i].Get() + " en la posición " + i + " No es mas grande que el número " + x[i - 1].Get() + " en la posición " + (i - 1));
             }
+        }
+        [TestMethod]
+        public void BinaryTreeSortTest2()
+        {
+
+            Random random = new Random();
+            Methods M = new Methods();
+            for (int i = 0; i < 1000; i++)
+            {
+                Numbers newOne = new Numbers(random.Next(-100, 100));
+                M.addToTree(newOne);
+            }
+
+            List<Numbers> x = M.InOrder();
+
+
+            for (int i = 1; i < x.Count; i++)
+            {
+                Assert.IsTrue(x[i].CompareTo(x[i - 1]) >= 0, "El número " + x[i].Get() + " en la posición " + i + " No es mas grande que el número " + x[i - 1].Get() + " en la posición " + (i - 1));
+            }
+        }
+
+        [TestMethod]
+        public void BinaryTreeSortTest3()
+        {
+            Methods M = new Methods();
+
+            Assert.IsNotNull(M);
         }
     }
 }
