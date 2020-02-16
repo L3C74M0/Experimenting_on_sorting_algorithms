@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Experimenting_on_sorting_algorithms {
-    public class Principal {
+namespace Experimenting_on_sorting_algorithms
+{
+    public class Principal
+    {
         protected static Methods methods;
 
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
 
             methods = new Methods();
 
@@ -21,16 +24,16 @@ namespace Experimenting_on_sorting_algorithms {
             }
 
 
-            /*
+            
             //Para el MergeSort
             Console.WriteLine("Con un arreglo de tamaño " + array.Length);
-            long time1 = DateTime.Now.Millisecond;
+            long t1 = CurrentTimeMillis();
             methods.MergeSort(array, 0, array.Length - 1);
-            long time2 = DateTime.Now.Millisecond;
+            long t2 = CurrentTimeMillis();
             Console.WriteLine(" ");
+            
 
-            */
-
+            /*
             //Para el arbol
             long t1 = CurrentTimeMillis();
             Console.WriteLine("Con un arreglo de tamaño " + array.Length);
@@ -43,7 +46,7 @@ namespace Experimenting_on_sorting_algorithms {
 
             long t2 = CurrentTimeMillis();
             Console.WriteLine(" ");
-
+            */
 
             long elapsedMS = t2 - t1;
             Console.WriteLine("Mi laptop tarda: " + elapsedMS + "ms");
@@ -54,8 +57,7 @@ namespace Experimenting_on_sorting_algorithms {
         public static DateTime reference = DateTime.UtcNow;
         public static long CurrentTimeMillis()
         {
-            return (long) (DateTime.UtcNow - reference).TotalMilliseconds;
+            return (long)(DateTime.UtcNow - reference).TotalMilliseconds;
         }
-
-}
+    }
 }

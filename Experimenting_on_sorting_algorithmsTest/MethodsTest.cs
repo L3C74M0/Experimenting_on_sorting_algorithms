@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Experimenting_on_sorting_algorithmsTest
 {
     [TestClass]
-    public class UnitTest1
+    public class MethodsTest
     {
         [TestMethod]
         public void MergeSortTest1()
