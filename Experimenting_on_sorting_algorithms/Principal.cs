@@ -11,40 +11,25 @@ namespace Experimenting_on_sorting_algorithms {
         static void Main(string[] args) {
             methods = new Methods();
 
-            int[] array = new int[99];
-
+            int[] array = new int[10000];
             Random random = new Random();
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(1, 100);
+                array[i] = random.Next(1, 100000);
             }
 
-
-            String line = "";
-
-            for(int i = 0; i < array.Length; i++) {
-                line+= " " + array[i];
-                Numbers n = new Numbers(array[i]);
-                methods.addToTree(n);
-            }
-
-            Console.WriteLine("antes de ejecutar el metodo: ");
-            Console.WriteLine(line);
-
+            long time1 = DateTime.Now.Millisecond;
+           
+            Console.WriteLine("Con un arreglo de tamaño " + array.Length);
             methods.MergeSort(array, 0, array.Length - 1);
-            List<Numbers> p = methods.InOrder();
-            for (int i=0;i<p.Count();i++)
-            {
-                Console.WriteLine(p[i].Get());
-            }
-            line = "";
-            for (int i = 0; i < array.Length; i++) {
-                line += " " + array[i];
-            }
+            Console.WriteLine(" ");
 
-            Console.WriteLine("Despues de ejecutar el metodo: ");
-            Console.WriteLine(line);
+            long time2 = DateTime.Now.Millisecond;
+
+            long elapsedMS = time2 - time1;
+            Console.WriteLine("Mi laptop tarda: " + elapsedMS + "ms");
+
             Console.ReadLine();
         }
     }
